@@ -1,16 +1,18 @@
-from unittest import TestCase
+
 import day1
+import pytest
 
 
-print(day1.read_combination("32")) # type: ignore
+combiner = day1.calculateCombination()
+
+print(combiner.spell_out('eightone3qjpfddljjjpjjmcg2twonexh'))
+
+def assert_true():
+    assert True
 
 
 
-class TryTesting(TestCase):
-    def test_always_passes(self):
-        self.assertTrue(True)
 
+def read_combination():
 
-    def read_combination(self):
-
-        self.assertTrue(day1.read_combination("21hghvr6") == 24) # type: ignore
+    assert day1.read_combination("21hghvr6") == 24 # type: ignore
