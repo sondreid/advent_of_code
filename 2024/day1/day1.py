@@ -1,4 +1,4 @@
-
+from collections import Counter
 
 
 def read_data(file_path: str) -> tuple[list[int], list[int]]:
@@ -20,12 +20,25 @@ def calculate_absolutes_of_list(list1 : list[int], list2 : list[int]) -> list[in
 
 
 
+def calculate_similarity_score(list1: list[int], list2: list[int]) -> int:
+    counts_list2 = Counter(list2)
+    simil_score = 0
+    for i in list1:
+        simil_score += counts_list2[i]*i
+
+    return simil_score
+
 
 
 if __name__ == "__main__":
 
     list1, list2 = read_data('data.txt')
-    print(list1)
-    print(list2)
+
+    
+    #Part1 
+    print("> Part 1")
     print(sum(calculate_absolutes_of_list(list1, list2)))
-    print("hei")
+
+    #Part2
+    print("> Part 2")
+    print(calculate_similarity_score(list1, list2))
